@@ -4,7 +4,9 @@
 
 4 UIButtons, each with an IBAction, and 1 UILabel with an IBOutlet
 
-![SoundBoard](screenshot.png)
+<p align="center">
+  <img src="screenshot.png" width=350px>
+</p>
 
 ### Challenges
 1. Have 9 buttons, using an IBOutletCollection
