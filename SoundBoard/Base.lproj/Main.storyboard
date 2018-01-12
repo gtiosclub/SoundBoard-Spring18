@@ -78,6 +78,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="buttonFour" destination="y2o-y6-g6O" id="hh8-IE-2z5"/>
+                        <outlet property="buttonOne" destination="lbC-qZ-Sjj" id="QTP-X7-rFd"/>
+                        <outlet property="buttonThree" destination="VoC-zn-4LU" id="bcZ-Iu-jGo"/>
+                        <outlet property="buttonTwo" destination="d7J-SS-Vwz" id="PwR-Pv-kee"/>
                         <outlet property="titleLabel" destination="duq-nw-5Z0" id="Pqy-5q-enk"/>
                     </connections>
                 </viewController>

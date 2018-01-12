@@ -6,22 +6,30 @@
 //  Copyright © 2018 BW. All rights reserved.
 //
 
-import UIKit
+#if os(iOS)
+    import UIKit
+#else
+    import AppKit
+    typealias UIViewController = NSViewController
+    typealias UILabel = NSTextField
+    typealias UIButton = NSButton
+#endif
+
 import AVFoundation
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+    @IBOutlet weak var buttonThree: UIButton!
+    @IBOutlet weak var buttonFour: UIButton!
+    
     var player:AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setButtonColor()
     }
 
     @IBAction func onePressed(_ sender: UIButton) {
@@ -56,5 +64,35 @@ class ViewController: UIViewController {
         player?.prepareToPlay()
         player?.play()
     }
+    
+    func setButtonColor() {
+        #if os(macOS)
+            self.view.layer?.backgroundColor = NSColor.white.cgColor
+            buttonOne.colorString = "pink"
+            buttonTwo.colorString = "green"
+            buttonThree.colorString = "yellow"
+            buttonFour.colorString = "blue"
+        #endif
+    }
 }
 
+#if os(macOS)
+extension NSTextField {
+    public var text: String {
+        get { return self.stringValue }
+        set { self.stringValue = newValue }
+    }
+}
+
+extension NSButton {
+    public var backgroundColor: NSColor {
+        get { return NSColor.init(cgColor: (self.layer?.backgroundColor)!)! }
+        set { self.layer?.backgroundColor = backgroundColor.cgColor }
+    }
+    
+    public var colorString: String {
+        get { return "" }
+        set { self.layer?.backgroundColor = NSColor.init(named: NSColor.Name(rawValue: newValue), bundle: nil)?.cgColor }
+    }
+}
+#endif
