@@ -6,6 +6,7 @@
 
 <p align="center">
   <img src="screenshot.png" width=350px>
+  <img src="screenshot_macOS.png" width=350px>
 </p>
 
 ### Challenges
