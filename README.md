@@ -3,6 +3,7 @@
 ### Spring 2018, 1/16/2018
 
 4 UIButtons, each with an IBAction, and 1 UILabel with an IBOutlet
+Simple example of sharing ViewController code between iOS and macOS target with shimming through typealiasing and class extensions
 
 <p align="center">
   <img src="screenshot.png" width=350px>
